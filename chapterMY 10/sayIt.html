@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>sayIt</title>
+        <script>
+            function sayIt(translator) {
+                var phrase = translator("Hellow");
+                alert(phrase);
+            }
+
+            function hawaiianTranslator(word) {
+                if (word === "Hellow") return "Aloha";
+                if (word === "Goodbye") return "Aloha";
+            }
+            
+            sayIt(hawaiianTranslator);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

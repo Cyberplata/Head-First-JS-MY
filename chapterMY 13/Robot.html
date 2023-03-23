@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Robot</title>
+
+        <script>
+
+           function Robot(name, year, owner) {
+                this.name = name;
+                this.year = year;
+                this.owner = owner;
+           }
+
+          //  Robot.prototype.toString = function() {
+          //      return this.name + ' Robot belonding to' + this.owner;
+          //  };
+          //  var toy = new Robot('Toy', 2013, 'Avary');
+          //  console.log(toy.toString());
+
+           Robot.prototype.maker = 'ObjectRUs';
+           
+           Robot.prototype.speak = function() {
+                console.log('code to speak');
+           };
+
+           Robot.prototype.makeCoffee = function() {
+                console.log('code 4 coffe');
+           };
+
+           Robot.prototype.blinkLighth = function() {
+                console.log('code 4 lights');
+           };
+
+           var robby = new Robot('Robby', 1956, 'Dr. Morbius');
+           var rosie = new Robot('Rosie', 1962, 'George Jetson');
+
+           robby.onOffSwitch = true;
+           robby.makeCoffee = function() {
+                console.log('starbucks');
+           };
+
+           rosie.cleanHouse = function() {
+                console.log('code 4 clean');
+           };
+
+
+           console.log(robby.name + ' was made by ' + robby.maker + ' in ' + robby.year + ' and is owned by ' + robby.owner);
+           robby.makeCoffee();
+           robby.blinkLighth();
+ 
+           console.log(rosie.name + ' was made by ' + rosie.maker + ' in ' + rosie.year + ' and is ownded by ' + rosie.owner);
+           rosie.cleanHouse();
+
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

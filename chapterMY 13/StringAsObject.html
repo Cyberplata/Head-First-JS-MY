@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>StringAsObject</title>
+
+        <script>
+            
+            //Задача 1 про палиндром - стока/слово, которое читается одинаково
+            String.prototype.palindrome = function() {                          //Первый вариант решения через if
+                var len = this.length - 1;
+                for (var i = 0; i <= len; i++) {
+                    if (this.charAt(i) !== this.charAt(len - i)) {
+                        return false;
+                    }
+                    if (i === (len - i)) {
+                        return true;
+                    }
+                }
+                return true;
+            };
+
+            // String.prototype.palindrome = function() {                       //Второй вариант решенич через метод split(), reverse(), join()
+            //     var r = this.split("").reverse().join("");
+            //     return (r === this.valueOf());
+            // }
+
+            var phrases = ["eve", "kayak", "mom", "wow", "Not a palindrome"];
+
+            for (var i = 0; i < phrases.length; i++) {
+                var phrase = phrases[i];
+                if (phrase.palindrome()) {
+                    console.log("'" + phrase + "' is a palindrome");
+                } else {
+                    console.log("'" + phrase + "' is NOT a palindrome");
+                }
+            }
+
+
+
+
+
+
+            
+            //Задача 2 , если строка содержит банальные выражения из заранее известного списка     
+            String.prototype.cliche = function() {
+                var cliche = ["look and load", "touch base", "open the kimono"];
+
+                for (var i = 0; i < cliche.length; i++) {
+                    var index = this.indexOf(cliche[i]);
+                    if (index >= 0) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+
+            var sentences = ["I'l send my car around to pick you up.",
+                             "Let's touch base in the morning and see where we are",
+                             "We don't want to open the kimono, we just want to inform them."];
+            
+                for (var i = 0; i < sentences.length; i++) {
+                    var phrase = sentences[i];
+                    if (phrase.cliche()) {
+                        console.log("CLICHE ALERT: " + phrase);
+                    }
+                }
+
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

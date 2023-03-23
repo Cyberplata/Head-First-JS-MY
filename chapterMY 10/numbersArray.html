@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>numbersArray</title>
+        <script>
+            var numbersArray = [60, 50, 62, 58, 54, 54];
+            function compareNymbers (num1, num2) {
+                if(num1 > num2) {
+                    return 1;
+                } else if (num1 === num2) {
+                    return 0;
+                } else {
+                    return -1;
+                }
+            }
+            numbersArray.sort(compareNymbers);
+            console.log(numbersArray);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
